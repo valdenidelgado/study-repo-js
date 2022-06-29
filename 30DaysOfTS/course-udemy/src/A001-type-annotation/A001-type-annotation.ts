@@ -23,3 +23,10 @@ function soma(a: number, b: number): number {
 
 // Colocando funções na variável e com os tipos, ainda sem o alias
 let soma2: (a: number, b: number) => number = (a, b) => a + b
+
+// Variavel de multiplicar com arrow function
+let multiplicar = (a: number, b: number) => a * b 
+
+// readonly array example
+let readonlyArray: ReadonlyArray<number> = [1, 2, 3, 4, 5]
+let array: readonly number[] = [1, 2, 3, 4, 5]
