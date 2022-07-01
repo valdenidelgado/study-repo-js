@@ -32,6 +32,16 @@ app.get('/blog/:artigo?', (req, res) => {
     }
 })
 
+// About query params
+app.get('/about/youtube', (req, res) => {
+    let canal = req.query['canal'];
+    if (canal) {
+        res.send('<h1>About Page of ' + canal + ' channel from youtube</h1>');
+    } else {
+        res.send('<h1>About Page of some channel from youtube</h1>');
+    }
+})
+
 app.listen(3000,(erro) => {
     if(erro){
         console.log(erro);
