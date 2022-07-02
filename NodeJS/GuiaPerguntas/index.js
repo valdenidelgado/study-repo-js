@@ -18,13 +18,15 @@ connection
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
 // Body Parser
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 // Rotas
 app.get('/', (req, res) => {
-    Pergunta.findAll({raw: true, order:[
-        ['id', 'DESC'] // Para orgarnizar por id, decrescente
-        ]}).then(perguntas => {
+    Pergunta.findAll({
+        raw: true, order: [
+            ['id', 'DESC'] // Para orgarnizar por id, decrescente
+        ]
+    }).then(perguntas => {
         res.render('index', {
             perguntas: perguntas
         });
@@ -43,24 +45,46 @@ app.post('/salvarpergunta', (req, res) => {
         descricao: descricao
     }).then(() => {
         res.redirect('/')
-     });
+    });
 });
 
 app.get('/pergunta/:id', (req, res) => {
     var id = req.params.id;
     Pergunta.findOne({
-        where: { id: id }
+        where: {id: id}
     }).then(pergunta => {
         if (pergunta !== undefined) {
-            res.render('pergunta', {
-                pergunta: pergunta
+            Resposta.findAll({
+                where: {perguntaId: pergunta.id},
+                order: [
+                    ['id', 'DESC']
+                ]
+            }).then(respostas => {
+                res.render('pergunta', {
+                    pergunta: pergunta,
+                    respostas: respostas
+                });
             });
-        } else {
-            res.redirect('/');
+        }else
+            {
+                res.redirect('/');
+            }
         }
-    })
-});
+    )
+    });
 
-app.listen(3000, () => {
-    console.log('Example app listening on port 3000!');
-});
+    app.post('/responder', (req, res) => {
+        let resposta = req.body.body;
+        let pergunta = req.body.pergunta;
+
+        Resposta.create({
+            resposta: resposta,
+            perguntaId: pergunta
+        }).then(() => {
+            res.redirect('/pergunta/' + perguntaId);
+        });
+    });
+
+    app.listen(3000, () => {
+        console.log('Example app listening on port 3000!');
+    });
