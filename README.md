@@ -10,3 +10,4 @@
 - *NodeJS*
 - *Bash*
 - *SQL*
+- *Rust?*
