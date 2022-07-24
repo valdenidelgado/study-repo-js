@@ -66,14 +66,14 @@ h1 {
   font-family: arial;
   text-align: center;
   padding-top: 10px;
-  font-size: 2px;
+  font-size: 2rem;
 }
 
 h2 {
   font-family: arial;
   text-align: center;
   padding-top: 10px;
-  font-size: 1.9px;
+  font-size: 1.9rem;
 }
 
 .p-footer {
@@ -120,7 +120,7 @@ button {
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  grid-gap: 1px;
+  grid-gap: 10px;
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -135,6 +135,7 @@ button {
 
 #form {
   background-color: rgba(0, 0, 139);
+  color: #fff;
 }
 
 .form-contact {
@@ -176,4 +177,31 @@ a {
 
 a:hover {
   color: rgba(255,255,0,1.0)
+}
+
+#enviar {
+  background-color: rgba(60, 179, 113);
+}
+
+#limpar {
+  background-color: rgba(178, 34, 34);
+}
+
+.img-grid {
+  width: 18rem;
+  height: 10rem;
+  border-radius: 20%;
+}
+
+.text-grid {
+  font-family: arial;
+  font-size: 1.7rem;
+  text-align: center;
+  font-weight: bold;
+}
+
+.link-grid {
+  color: rgba(0,0,255, 1.0);
+  font-weight: bold;
+  font-size: 1.8rem;
 }
