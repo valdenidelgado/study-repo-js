@@ -4,6 +4,11 @@ import ("fmt")
 
 func main(){
 
+	for count := 0; count < 10; {
+		fmt.Println(count)
+		count++
+	}
+
 	// for basico padrao
 	for i := 0; i < 10; i++ {
 		fmt.Println(i)
