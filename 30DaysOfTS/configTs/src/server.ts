@@ -1,9 +1,7 @@
-import express from 'express'
+let name: string = 'valdeni'
 
-const app = express()
+function sayHello(name: string): void {
+    console.log(`Hello ${name}`)
+}
 
-app.get('/', (req, res) => {
-  return res.json({ message: 'Hello World' })
-})
-
-app.listen(3333)
+sayHello(name)
