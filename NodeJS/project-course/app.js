@@ -4,7 +4,7 @@ import homeRoutes from "./src/routes/homeRoutes";
 class App() {
   constructor(){
     this.app = express();
-    this.config();
+    this.middlewares();
     this.routes();
   }
 

@@ -1,7 +1,7 @@
-let name: string = 'valdeni'
+const name: string = 'valdeni'
 
-function sayHello(name: string): void {
-    console.log(`Hello ${name}`)
+function sayHello (name: string): void {
+  console.log(`Hello ${name}`)
 }
 
 sayHello(name)

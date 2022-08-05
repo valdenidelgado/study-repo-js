@@ -39,7 +39,7 @@ function renderBoard() {
         liNumber,textContent = currentNumber
         ulNumbers.appendChild(liNumber)
     }
-
+    
     divBoard.appendChild(ulNumbers)
 
 

@@ -1,7 +1,11 @@
 package main
 
-import ("fmt")
-import ("time")
+import (
+	"fmt"
+)
+import (
+	"time"
+)
 
 func main() {
 	name := "Valdeni"
