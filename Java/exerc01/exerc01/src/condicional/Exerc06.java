@@ -8,24 +8,19 @@ public class Exerc06 {
         Locale.setDefault(Locale.US);
         Scanner sc = new Scanner(System.in);
 
-        int cod = sc.nextInt();
-        int quant = sc.nextInt();
+        double value = sc.nextDouble();
 
-        double total = 0;
-
-        if (cod == 1){
-            total = quant * 4.00;
-        } else if (cod == 2) {
-            total = quant * 4.50;
-        } else if (cod == 3) {
-            total = quant * 5.00;
-        } else if (cod == 4) {
-            total = quant * 2.00;
-        } else if (cod == 5) {
-            total = quant * 1.50;
+        if (value < 0 || value > 100) {
+            System.out.println("Fora de intervalo");
+        } else if (value <= 25) {
+            System.out.println("Intervalo de [0,25]");
+        } else if (value <= 50) {
+            System.out.println("Intervalo de [25,50]");
+        } else if (value <= 75) {
+            System.out.println("Intervalo de [50,75]");
+        } else {
+            System.out.println("Intervalo de [75,100]");
         }
-
-        System.out.printf("Total: R$ %.2f", total);
 
         sc.close();
     }

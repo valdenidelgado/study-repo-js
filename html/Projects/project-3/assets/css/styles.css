@@ -231,3 +231,32 @@ p {
 .gallery-img img:hover {
   transform: translate(-3%, 3%) scale(1.2) rotate(5deg);
 }
+
+.responsive-table {
+  width: 100%;
+  overflow: hidden;
+  overflow-x: auto;
+}
+
+table {
+  min-width: 36.5rem;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table caption {
+  font-style: italic;
+  font-size: 1.6rem;
+  text-align: left;
+  margin-bottom: 1rem;
+}
+table td, table th {
+  white-space: nowrap;
+  padding: 1rem;
+  text-align: left;
+  border: 0.1rem solid var(--light-gray-color);
+}
+
+tfoot td, table th {
+  background: var(--light-gray-color);
+}

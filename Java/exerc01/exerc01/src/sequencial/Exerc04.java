@@ -1,3 +1,5 @@
+package sequencial;
+
 import java.util.Locale;
 import java.util.Scanner;
 
@@ -14,5 +16,7 @@ public class Exerc04 {
 
         System.out.println("NUMBER = " + numFunc);
         System.out.printf("SALARY = U$ %.2f", calc);
+
+        sc.close();
     }
 }

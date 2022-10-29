@@ -1,3 +1,5 @@
+package sequencial;
+
 import java.util.Locale;
 import java.util.Scanner;
 
@@ -17,5 +19,7 @@ public class Exerc05 {
         double calc = numPiece1 * valuePiece1 + numPiece2 * valuePiece2;
 
         System.out.printf("VALOR A PAGAR: R$ %.2f", calc);
+
+        sc.close();
     }
 }

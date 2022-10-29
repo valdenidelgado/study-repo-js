@@ -8,22 +8,25 @@ public class Exerc05 {
         Locale.setDefault(Locale.US);
         Scanner sc = new Scanner(System.in);
 
-        int initialHour = sc.nextInt();
-        int finalHour = sc.nextInt();
+        int cod = sc.nextInt();
+        int quant = sc.nextInt();
 
-        int duracao = 0;
+        double total = 0;
 
-        if (initialHour > finalHour){
-            duracao = finalHour - initialHour + 24;
-        } else if (finalHour > initialHour) {
-            duracao = finalHour - initialHour;
+        if (cod == 1){
+            total = quant * 4.00;
+        } else if (cod == 2) {
+            total = quant * 4.50;
+        } else if (cod == 3) {
+            total = quant * 5.00;
+        } else if (cod == 4) {
+            total = quant * 2.00;
+        } else if (cod == 5) {
+            total = quant * 1.50;
         }
 
-        if (duracao > 0) {
-            System.out.printf("O JOGO DUROU %d HORA(S)", duracao);
-        } else {
-            System.out.println("O JOGO DUROU 24 HORA(S)");
-        }
+        System.out.printf("Total: R$ %.2f", total);
+
         sc.close();
     }
 }

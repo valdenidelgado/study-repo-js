@@ -1,3 +1,5 @@
+package sequencial;
+
 import java.util.Locale;
 import java.util.Scanner;
 
@@ -14,5 +16,7 @@ public class Exerc03 {
         int diferenca = a * b - c * d;
 
         System.out.println("DIFERENCA = " + diferenca);
+
+        sc.close();
     }
 }

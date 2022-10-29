@@ -8,18 +8,19 @@ public class Exerc07 {
         Locale.setDefault(Locale.US);
         Scanner sc = new Scanner(System.in);
 
-        double value = sc.nextDouble();
+        double x = sc.nextDouble();
+        double y = sc.nextDouble();
 
-        if (value < 0 || value > 100) {
-            System.out.println("Fora de intervalo");
-        } else if (value <= 25) {
-            System.out.println("Intervalo de [0,25]");
-        } else if (value <= 50) {
-            System.out.println("Intervalo de [25,50]");
-        } else if (value <= 75) {
-            System.out.println("Intervalo de [50,75]");
+        if (x == 0 && y == 0) {
+            System.out.println("Origem");
+        } else if (x > 0 && y > 0) {
+            System.out.println("Q1");
+        } else if (x < 0 && y > 0) {
+            System.out.println("Q2");
+        } else if (x < 0 && y < 0) {
+            System.out.println("Q3");
         } else {
-            System.out.println("Intervalo de [75,100]");
+            System.out.println("Q4");
         }
 
         sc.close();

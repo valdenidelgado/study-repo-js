@@ -8,11 +8,22 @@ public class Exerc04 {
         Locale.setDefault(Locale.US);
         Scanner sc = new Scanner(System.in);
 
-        int n = sc.nextInt();
-        int n2 = sc.nextInt();
+        int initialHour = sc.nextInt();
+        int finalHour = sc.nextInt();
 
-        System.out.println((n % n2 == 0 || n2 % n == 0) ? "Sao Multiplos" : "Nao sao multiplos");
+        int duracao = 0;
 
+        if (initialHour > finalHour){
+            duracao = finalHour - initialHour + 24;
+        } else if (finalHour > initialHour) {
+            duracao = finalHour - initialHour;
+        }
+
+        if (duracao > 0) {
+            System.out.printf("O JOGO DUROU %d HORA(S)", duracao);
+        } else {
+            System.out.println("O JOGO DUROU 24 HORA(S)");
+        }
         sc.close();
     }
 }

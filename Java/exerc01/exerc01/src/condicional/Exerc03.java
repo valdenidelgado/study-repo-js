@@ -9,7 +9,10 @@ public class Exerc03 {
         Scanner sc = new Scanner(System.in);
 
         int n = sc.nextInt();
+        int n2 = sc.nextInt();
 
-        System.out.println((n % 2 == 0) ? "PAR" : "IMPAR");
+        System.out.println((n % n2 == 0 || n2 % n == 0) ? "Sao Multiplos" : "Nao sao multiplos");
+
+        sc.close();
     }
 }

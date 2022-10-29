@@ -8,20 +8,21 @@ public class Exerc08 {
         Locale.setDefault(Locale.US);
         Scanner sc = new Scanner(System.in);
 
-        double x = sc.nextDouble();
-        double y = sc.nextDouble();
+        double salary = sc.nextDouble();
 
-        if (x == 0 && y == 0) {
-            System.out.println("Origem");
-        } else if (x > 0 && y > 0) {
-            System.out.println("Q1");
-        } else if (x < 0 && y > 0) {
-            System.out.println("Q2");
-        } else if (x < 0 && y < 0) {
-            System.out.println("Q3");
+        double total = 0;
+
+        if (salary <= 2000.00){
+            System.out.println("Isento");
+        } else if (salary <= 3000.00) {
+            total = (salary - 2000.00) * 0.08;
+        } else if (salary <= 4500.00) {
+            total = (salary - 3000.00) * 0.18 + 1000.00 * 0.08;
         } else {
-            System.out.println("Q4");
+            total = (salary - 4000.00) * 0.28 + 3500.00 * 0.18 + 1000 * 0.08;
         }
+
+        System.out.printf("R$ %.2f", total);
 
         sc.close();
     }
