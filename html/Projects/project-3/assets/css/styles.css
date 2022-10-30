@@ -89,8 +89,8 @@ p {
 .menu {
   position: fixed;
   top: 0;
-  right: 0;
   left: 0;
+  right: 0;
   width: 100%;
   z-index: 1;
   border-bottom: 0.01rem solid var(--light-gray-color);
@@ -102,6 +102,10 @@ p {
   align-items: center;
   padding-top: 0;
   padding-bottom: 0;
+}
+
+.menu-space {
+  height: 6.5rem;
 }
 
 .menu h1 {
@@ -142,16 +146,12 @@ p {
   left: 25%;
 }
 
-.menu-space {
-  height: 6.5rem;
-}
 
 .intro-content {
   position: relative;
   /* top: -8rem; */
   display: grid;
   grid-template-columns: 1fr 1.5fr;
-  align-items: center;
   gap: var(--gap);
   min-height: 100vh;
 }
@@ -207,7 +207,6 @@ p {
 }
 
 .grid h3::before {
-  font-size: 3rem;
   counter-increment: grid-counter;
   content: counter(grid-counter);
   position: absolute;
@@ -234,7 +233,6 @@ p {
 }
 
 .responsive-table {
-  width: 100%;
   overflow: hidden;
   overflow-x: auto;
 }
@@ -342,6 +340,22 @@ body .full-width {
 
 .close-menu {
   display: none;
+}
+
+.back-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background: var(--white-color);
+  width: 5rem;
+  height: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  color: var(--primary-color);
+  transform: rotate(-90deg);
+  border: 0.1rem solid var(--primary-color);
 }
 
 @media (max-width: 800px) {
