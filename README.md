@@ -5,11 +5,6 @@
 ## **My studies in this repo**
 
 - *HTML/CSS*
+- *HTML/CSS/JS*
 - *JavaScript*
 - *TypeScript*
-- *NodeJS*
-- *NestJS*
-- *Bash*
-- *SQL*
-- *Go?*
-- *Rust?*
