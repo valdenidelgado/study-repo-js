@@ -71,9 +71,9 @@ h1 {
 
 /* hide class */
 
-/* .hide {
+.hide {
   display: none !important;
-} */
+}
 
 /* scoreboard */
 
@@ -86,8 +86,9 @@ h1 {
   margin-right: auto;
 }
 
-#score-box {
-  margin: 0 20px;
+.score-box {
+  margin-top: 0;
+  margin-right: 20px;
 }
 
 #x-scoreboard {
@@ -118,5 +119,4 @@ h1 {
   background-color: black;
   color: white;
   padding: 20px;
-  display: none;
 }
