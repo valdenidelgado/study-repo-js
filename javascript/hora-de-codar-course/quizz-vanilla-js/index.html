@@ -9,7 +9,7 @@
 </head>
 <body>
   <h1 id="main-title">Quizz de programação</h1>
-  <div id="score-container">
+  <div id="score-container" class="hide">
     <h2>Parabens</h2>
     <p id="display-score"><span>90</span>%</p>
     <p>Você acertou <span id="correct-answers">0</span> de <span id="question-qty">10</span> perguntas</p>
@@ -17,15 +17,13 @@
   </div>
   <div id="quizz-container">
     <p id="question"><span id="question-number">1</span> - <span id="question-text">Qual é a unidade de medida para metros?</span></p>
+    <div id="answers-box">
+      <button><span class="btn-letter">a</span> <span class="question-answer">m</span></button>
+      <button><span class="btn-letter">b</span> <span class="question-answer">km</span></button>
+      <button><span class="btn-letter">c</span> <span class="question-answer">ms</span></button>
+      <button><span class="btn-letter">d</span> <span class="question-answer">r</span></button>
+    </div>
   </div>
-  <div id="answers-box">
-    <button class="correct-answer"><span class="btn-letter">a</span> <span class="question-answer">m</span></button>
-    <button class="wrong-answer"><span class="btn-letter">b</span> <span class="question-answer">km</span></button>
-    <button><span class="btn-letter">c</span> <span class="question-answer">ms</span></button>
-    <button><span class="btn-letter">d</span> <span class="question-answer">r</span></button>
-  </div>
-
-
   <button class="answer-template hide"><span class="btn-letter">d</span> <span class="question-answer">r</span></button>
   <script src="js/scripts.js" defer></script>
 </body>
