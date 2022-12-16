@@ -2,20 +2,28 @@ import express from "express";
 import { config } from "dotenv";
 import { MongoGetUsersRepository } from "./repositories/get-users/mongo-get-users";
 import { GetUsersController } from "./controllers/get-users/get-users";
-const app = express();
+import { MongoClient } from "./database/mongo";
 
-config();
+const main = async () => {
+  config();
+  const app = express();
+  const port = process.env.PORT || 3000;
 
-app.get("/users", async (req, res) => {
-  const getUsersController = new GetUsersController(
-    new MongoGetUsersRepository()
-  );
+  await MongoClient.connect();
 
-  const { body, statusCode } = await getUsersController.handle();
+  app.get("/users", async (req, res) => {
+    const getUsersController = new GetUsersController(
+      new MongoGetUsersRepository()
+    );
 
-  res.send(body).status(statusCode);
-});
+    const { body, statusCode } = await getUsersController.handle();
 
-app.listen(process.env.PORT, () => {
-  console.log(`Server running on port ${process.env.PORT}`);
-});
+    res.send(body).status(statusCode);
+  });
+
+  app.listen(process.env.PORT, () => {
+    console.log(`Server running on port ${port}`);
+  });
+};
+
+main();
