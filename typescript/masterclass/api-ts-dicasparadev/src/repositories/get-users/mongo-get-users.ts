@@ -8,8 +8,6 @@ export class MongoGetUsersRepository implements IGetUsersRepository {
       .find()
       .toArray();
 
-    console.log(users);
-
     return users.map(({ _id, ...rest }) => ({
       ...rest,
       id: _id.toHexString(),
