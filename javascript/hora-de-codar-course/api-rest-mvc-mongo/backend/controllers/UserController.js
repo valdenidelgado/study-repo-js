@@ -1,5 +1,5 @@
 const createUserToken = require("../helpers/create-user-token");
-const User = require("../models/User");
+const user = require("../models/User");
 const bcrypt = require("bcrypt");
 
 module.exports = class UserController {
@@ -14,7 +14,7 @@ module.exports = class UserController {
       return res.status(400).json({ error: "Passwords do not match" });
     }
 
-    const userExists = await User.findOne({ email: email });
+    const userExists = await user.findOne({ email: email });
 
     if (userExists) {
       return res.status(400).json({ error: "User already exists" });
@@ -30,7 +30,7 @@ module.exports = class UserController {
       password: hashedPassword,
     };
     try {
-      const newUser = await User.save(user);
+      const newUser = await user.save(user);
 
       await createUserToken(newUser, req, res);
 
@@ -38,5 +38,38 @@ module.exports = class UserController {
     } catch (error) {
       return res.status(500).json({ error: "Something went wrong" });
     }
+  }
+
+  static async login(req, res) {
+    const { email, password } = req.body;
+
+    if (!email || !password) {
+      return res.status(400).json({ error: "Please fill all the fields" });
+    }
+
+    const user = await user.findOne({ email: email });
+
+    if (!user) {
+      return res.status(404).json({ error: "User not found" });
+    }
+
+    const isPasswordCorrect = await bcrypt.compare(password, user.password);
+
+    if (!isPasswordCorrect) {
+      return res.status(400).json({ error: "Invalid credentials" });
+    }
+
+    await createUserToken(user, req, res);
+  }
+
+  static async checkUser(req, res) {
+    let currentUser;
+
+    if (req.headers.authorization) {
+    } else {
+      currentUser = null;
+    }
+
+    res.status(200).send(currentUser);
   }
 };
