@@ -1,5 +1,6 @@
 import express from 'express';
 import mongoose from 'mongoose';
+import { router } from './router';
 
 mongoose.set('strictQuery', true);
 
@@ -9,6 +10,10 @@ mongoose.connect('mongodb://localhost:27017')
     const app = express();
 
     const port = 8000;
+
+    app.use(express.json());
+
+    app.use(router);
 
     app.get('/', (req, res) => {
       res.send('Hello World!');
