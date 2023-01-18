@@ -2,7 +2,12 @@ import { Request, Response } from 'express';
 import { Category } from '../../models/Category';
 
 export async function listCategories(req: Request, res: Response) {
-  const categories = await Category.find();
+  try {
+    const categories = await Category.find();
 
-  return res.status(200).json(categories);
+    return res.status(200).json(categories);
+  } catch (error) {
+    console.log(error);
+    res.sendStatus(500);
+  }
 }
