@@ -77,6 +77,11 @@ class UsersController {
 
     res.status(200).json();
   }
+
+  getUser(req, res) {
+    res.send('ok')
+  }
+
 }
 
 module.exports = UsersController;
