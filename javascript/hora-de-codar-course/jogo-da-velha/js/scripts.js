@@ -6,6 +6,7 @@ let messageContainer = document.querySelector('#message')
 let messageText = document.querySelector('#message p')
 let secondPlayer
 
+
 // contador de jogadas
 let player1 = 0
 let player2 = 0
