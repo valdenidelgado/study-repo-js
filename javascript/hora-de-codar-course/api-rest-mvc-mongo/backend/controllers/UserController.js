@@ -111,7 +111,9 @@ module.exports = class UserController {
 
     const { name, email, phone, password, confirmpassword } = req.body;
 
-    let image = '';
+    if (req.file) {
+        user.image = req.file.filename;
+    }
 
     if (!id.match(/^[0-9a-fA-F]{24}$/)){
       res.status(422).json({"message":" User not found!"});
