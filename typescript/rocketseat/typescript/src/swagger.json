@@ -12,9 +12,7 @@
   },
   "paths": {
     "/categories": {
-      "tags": [
-        "Categorias"
-      ],
+      "tags": ["Categorias"],
       "post": {
         "summary": "Cria uma nova categoria",
         "description": "Essa rota pode ser executada por **qualquer usuário autenticado**",
@@ -45,37 +43,21 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "properties": {
-                    "id": {
-                      "type": "string",
-                      "format": "uuid"
-                    },
-                    "name": {
-                      "type": "string"
-                    },
-                    "description": {
-                      "type": "string"
-                    },
-                    "created_at": {
-                      "type": "string",
-                      "format": "date-time"
-                    }
-                  }
+                  "$ref": "#/definitions/Category"
                 }
               }
             }
-          },
-          "400": {
-            "description": "Erro de validação",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "message": {
-                      "type": "string"
-                    }
+          }
+        },
+        "400": {
+          "description": "Erro de validação",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "message": {
+                    "type": "string"
                   }
                 }
               }
@@ -84,9 +66,7 @@
         }
       },
       "get": {
-        "tags": [
-          "Categorias"
-        ],
+        "tags": ["Categorias"],
         "summary": "Lista as categorias",
         "description": "Essa rota pode ser executada por **qualquer usuário autenticado**",
         "responses": {
@@ -119,6 +99,49 @@
               }
             }
           }
+        }
+      }
+    },
+    "/categories/import": {
+      "post": {
+        "tags": ["Categorias"],
+        "summary": "Importa categorias",
+        "description": "Essa rota pode ser executada por **qualquer usuário autenticado**",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "file": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Category": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time"
         }
       }
     }
