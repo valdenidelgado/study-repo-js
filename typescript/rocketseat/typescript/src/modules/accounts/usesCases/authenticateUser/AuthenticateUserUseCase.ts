@@ -21,8 +21,8 @@ class AuthenticateUserUseCase {
   constructor(
     @inject("UsersRepository")
     private usersRepository: IUsersRepository,
-    private hashProvider: IHashProvider,
-    private tokenProvider: ITokenProvider
+    // private hashProvider: IHashProvider,
+    // private tokenProvider: ITokenProvider
   ) {}
 
   async execute({ email, password }: IRequest): Promise<IResponse> {

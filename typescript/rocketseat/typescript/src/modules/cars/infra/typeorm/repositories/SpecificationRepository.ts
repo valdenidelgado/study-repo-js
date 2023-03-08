@@ -1,8 +1,8 @@
-import { Specification } from "../../model/Specification";
+import { Specification } from "../entities/Specification";
 import {
   ICreateSpecificationDTO,
   ISpecificationRepository,
-} from "../ISpecificationRepository";
+} from "../../../repositories/ISpecificationRepository";
 
 class SpecificationRepository implements ISpecificationRepository {
   findByName(name: string): Specification {
