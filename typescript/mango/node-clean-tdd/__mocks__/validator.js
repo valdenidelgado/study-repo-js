@@ -6,3 +6,5 @@ module.exports = {
         return this.isEmailValid;
     }
 }
+
+// para teste de integração esse mock quebra o teste
