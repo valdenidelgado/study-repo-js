@@ -1,7 +1,6 @@
 import { InMemoryUsersRepository } from '@/repositories/in-memory/in-memory-user-repository'
 import { describe, it, expect, beforeEach } from 'vitest'
 import { hash } from 'bcryptjs'
-import { InvalidCredentialsError } from '../erros/invalid-credentials-error'
 import { GetUserProfileUseCase } from './get-user-profile-usecase'
 import { ResourceNotFoundError } from '../erros/resource-not-found-error'
 
@@ -34,20 +33,5 @@ describe('Get User Profile Use Case', () => {
         userId: 'wrong-user-id',
       }),
     ).rejects.toBeInstanceOf(ResourceNotFoundError)
-  })
-
-  it('should not be able authenticate with wrong password', async () => {
-    await userRepository.create({
-      name: 'John Doe',
-      email: 'john@doe.com',
-      password_hash: await hash('123456', 6),
-    })
-
-    expect(() =>
-      sut.execute({
-        email: 'john@doe.com',
-        password: '1233356',
-      }),
-    ).rejects.toBeInstanceOf(InvalidCredentialsError)
   })
 })
