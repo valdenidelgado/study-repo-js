@@ -2,5 +2,5 @@ import { Gym, Prisma } from '@prisma/client'
 
 export interface IGymsRepository {
   findById(id: string): Promise<Gym | null>
-  create(data: Prisma.GymUncheckedCreateInput): Promise<Gym>
+  create(data: Prisma.GymCreateInput): Promise<Gym>
 }
