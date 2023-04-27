@@ -25,6 +25,7 @@ export async function create(request: FastifyRequest, reply: FastifyReply) {
     gymId,
     userId: request.user.sub,
     userLatitude: latitude,
+
     userLongitude: longitude,
   })
 

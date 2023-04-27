@@ -8,3 +8,4 @@
 - *HTML/CSS/JS*
 - *JavaScript*
 - *TypeScript*
+- *REACT*
