@@ -22,7 +22,7 @@ model User {
   password_hash String
   role          Role      @default(MEMBER)
   createdAt     DateTime  @default(now())
-  checkIns      CheckIn[]
+  CheckIn       CheckIn[]
 
   @@map("users")
 }
@@ -45,7 +45,7 @@ model Gym {
   description String?
   latitude    Decimal
   longitude   Decimal
-  checkIns    CheckIn[]
+  CheckIn     CheckIn[]
 
   @@map("gyms")
 }
