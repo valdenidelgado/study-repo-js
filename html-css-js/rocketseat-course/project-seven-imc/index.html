@@ -10,6 +10,10 @@
     <title>IMC</title>
   </head>
   <body>
+    <div class="alert-error">
+      <p>Digite somente números.</p>
+    </div>
+
     <div class="container">
       <main class="card">
         <form>
@@ -20,7 +24,7 @@
             <input id="weight" type="text" placeholder="60">
           </div>
           <div class="input-wrapper">
-            <label for="height">Altura (m)</label>
+            <label for="height">Altura (cm)</label>
             <input id="height" type="text" placeholder="165">
           </div>
           <button type="submit">Calcular IMC</button>
@@ -28,11 +32,11 @@
       </main>
     </div>
 
-    <div class="modal-wrapper open">
+    <div class="modal-wrapper">
       <div class="modal card">
-        <button class="close">X</button>
         <h2 class="title">
-          Seu IMC é: <span id="result">28</span>
+          <button class="close">X</button>
+          <span>Seu IMC é: 28</span>
         </h2>
       </div>
     </div>
