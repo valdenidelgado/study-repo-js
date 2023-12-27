@@ -11,7 +11,6 @@ import {
   interruptCycleAction,
   markCycleAsFinishedAction,
 } from '../reducers/cycles/actions'
-import { act } from 'react-dom/test-utils'
 import { differenceInSeconds } from 'date-fns'
 
 interface CreateCycleData {
