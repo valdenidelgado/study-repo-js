@@ -1,0 +1,20 @@
+{
+  "transactions": [
+    {
+      "id": 1,
+      "description": "Burger King",
+      "type": "outcome",
+      "category": "Food",
+      "price": 2000,
+      "createdAt": "2024-01-20T23:05:52.225Z"
+    },
+    {
+      "id": 2,
+      "description": "Desenvolvimento de website",
+      "type": "income",
+      "category": "Venda",
+      "price": 12000,
+      "createdAt": "2023-01-20T23:05:52.225Z"
+    }
+  ]
+}
